@@ -5,7 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8cf1d65d-90b2-4613-b3bd-9eaa83d2aa44" name="Changes" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/test/apple-product.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/assets/AddToWishlist/AddToWishlist.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/assets/Bag/Bag.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/assets/Eye/Eye.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/Header/Header.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/Header/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/features/ProductCard/ProductCard.enums.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/features/ProductCard/ProductCard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/styles/_fonts.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/styles/_mixins.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/styles/_normalize.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/utils/extractCardImageSize.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/utils/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/next.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/vercel.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
+>>>>>>> origin/main
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +127,11 @@
       <workItem from="1730506104288" duration="251000" />
       <workItem from="1730506367324" duration="4085000" />
       <workItem from="1730510739945" duration="71000" />
+<<<<<<< HEAD
       <workItem from="1730551055110" duration="8897000" />
+=======
+      <workItem from="1730551055110" duration="8808000" />
+>>>>>>> origin/main
     </task>
     <servers />
   </component>
