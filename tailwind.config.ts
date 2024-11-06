@@ -1,4 +1,5 @@
 import type {Config} from 'tailwindcss';
+import {green} from 'next/dist/lib/picocolors';
 
 const config: Config = {
     content: [
@@ -38,6 +39,10 @@ const config: Config = {
                     2: 'var(--green-gray-2)',
                     1: 'var(--green-gray-1)',
                     0.5: 'var(--green-gray-0_5)',
+                },
+                green: {
+                    ghost: 'var(--green-ghost)',
+                    'ghost-hover': 'var(--green-ghost-hover)',
                 },
                 background: 'var(--background)',
                 foreground: 'var(--foreground)',

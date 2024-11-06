@@ -1,7 +1,7 @@
 'use client';
 
 import React, {useState} from 'react';
-import {ProductCardEnums} from '@/app/features/ProductCard/ProductCard.enums';
+import {ProductCardSize} from '@/app/features/ProductCard/ProductCardSize';
 import Image from 'next/image';
 import classnames from 'classnames';
 import Bag from '@/app/assets/Bag/Bag';
@@ -40,7 +40,7 @@ const StarRating = ({
 };
 
 export interface ProductCardProps {
-    cardType: ProductCardEnums;
+    cardType: ProductCardSize;
     showTestImage?: boolean;
 }
 
@@ -64,17 +64,17 @@ const ProductCard: React.FC<ProductCardProps> = ({
     const commonProductCardClass = 'bg-white m-[5px] border border-gray-1 hover:border-primary hover:shadow-card-standard transition-shadow duration-150 ease-in-out ';
     const productCardClass = classnames({
                                             [commonProductCardClass]: true,
-                                            'w-[248px] h-[340px] rounded-[5px]': cardType === ProductCardEnums.S,
+                                            'w-[248px] h-[340px] rounded-[5px]': cardType === ProductCardSize.S,
                                             'w-[264px] h-[326px]':
-                                                cardType === ProductCardEnums.M,
-                                            'w-[312px] h-[408px] rounded-[5px]': cardType === ProductCardEnums.L,
+                                                cardType === ProductCardSize.M,
+                                            'w-[312px] h-[408px] rounded-[5px]': cardType === ProductCardSize.L,
 
                                         });
 
     const imageClass = classnames({
-                                      'w-[246px] h-[246px] m-[0px]': cardType === ProductCardEnums.S,
-                                      'w-[254px] h-[230px] m-[5px]': cardType === ProductCardEnums.M,
-                                      'w-[302px] h-[302px] m-[5px]': cardType === ProductCardEnums.L,
+                                      'w-[246px] h-[246px] m-[0px]': cardType === ProductCardSize.S,
+                                      'w-[254px] h-[230px] m-[5px]': cardType === ProductCardSize.M,
+                                      'w-[302px] h-[302px] m-[5px]': cardType === ProductCardSize.L,
                                   })
     const {
         width,
@@ -86,20 +86,20 @@ const ProductCard: React.FC<ProductCardProps> = ({
     const bagIconCommonClass = 'absolute right-[11px] w-[40px] h-[40px] bg-gray-0.5 hover:bg-primary rounded-full flex items-center justify-center cursor-pointer'
     const bagIconClass = classnames({
                                         [bagIconCommonClass]: true,
-                                        'top-6': cardType === ProductCardEnums.S,
+                                        'top-6': cardType === ProductCardSize.S,
                                         'top-[20px]':
-                                            cardType === ProductCardEnums.M,
-                                        'top-5': cardType === ProductCardEnums.L,
+                                            cardType === ProductCardSize.M,
+                                        'top-5': cardType === ProductCardSize.L,
 
                                     })
 
     const topBlockIconsCommonClass = 'absolute right-0 flex flex-col items-end gap-[6px]'
     const topBlockIconsClass = classnames({
                                               [topBlockIconsCommonClass]: true,
-                                              'mr-4 mt-4': cardType === ProductCardEnums.S,
+                                              'mr-4 mt-4': cardType === ProductCardSize.S,
                                               'mt-4 mr-4':
-                                                  cardType === ProductCardEnums.M,
-                                              'mt-5 mr-5': cardType === ProductCardEnums.L,
+                                                  cardType === ProductCardSize.M,
+                                              'mt-5 mr-5': cardType === ProductCardSize.L,
                                           })
 
 

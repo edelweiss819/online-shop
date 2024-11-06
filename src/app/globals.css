@@ -34,6 +34,8 @@
     --green-gray-2: #B4CCB4;
     --green-gray-1: #DAE6DA;
     --green-gray-0_5: #EDF2EE;
+    --green-ghost: #EEf7EE;
+    --green-ghost-hover: #D5E3d5;
 }
 
 body {
