@@ -1,52 +1,26 @@
 'use client';
 
 import React, {useState} from 'react';
-import {ProductCardSize} from '@/app/features/ProductCard/ProductCardSize';
+import {
+    ProductCardSize
+} from '@/app/entities/product/ui/ProductCard/ProductCard.enums';
 import Image from 'next/image';
 import classnames from 'classnames';
 import Bag from '@/app/assets/Bag/Bag';
 import AddToWishlist from '@/app/assets/AddToWishlist/AddToWishlist';
 import Eye from '@/app/assets/Eye/Eye';
-import {extractCardImageSize} from '@/app/utils';
-
-const StarRating = ({
-                        rating,
-                        onRatingChange
-                    }) => {
-    const starsCount = 5;
-
-    return (
-        <div className="flex items-center">
-            {[...Array(starsCount)].map((_, index) => (
-                <label key={index} className={'-mt-[2px]'}>
-                    <input
-                        type="radio"
-                        value={index + 1}
-                        checked={rating === index + 1}
-                        onChange={onRatingChange}
-                        className="hidden"
-                    />
-                    <span
-                        className={`cursor-pointer text-4] ${
-                            rating >= index + 1 ? 'text-warning' : 'text-gray-2'
-                        }`}
-                    >
-                        ★
-                    </span>
-                </label>
-            ))}
-        </div>
-    );
-};
+import {extractCardImageSize} from '../../../../shared/utils';
+import StarRating from '@/app/features/rating/components/StarRating/StarRating';
+import {IProduct} from '@/app/entities/product/model/product';
 
 export interface ProductCardProps {
     cardType: ProductCardSize;
-    showTestImage?: boolean;
+    product: IProduct
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({
                                                      cardType,
-                                                     showTestImage,
+                                                     product,
                                                  }) => {
     const [rating, setRating] = useState<number>(0);
     const [isHoverBag, setIsHoverBag] = useState<boolean>(false);
@@ -62,14 +36,13 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
 
     const commonProductCardClass = 'bg-white m-[5px] border border-gray-1 hover:border-primary hover:shadow-card-standard transition-shadow duration-150 ease-in-out ';
-    const productCardClass = classnames({
-                                            [commonProductCardClass]: true,
-                                            'w-[248px] h-[340px] rounded-[5px]': cardType === ProductCardSize.S,
-                                            'w-[264px] h-[326px]':
-                                                cardType === ProductCardSize.M,
-                                            'w-[312px] h-[408px] rounded-[5px]': cardType === ProductCardSize.L,
+    const productCardClass = classnames(commonProductCardClass, {
+        'w-[248px] h-[340px] rounded-[5px]': cardType === ProductCardSize.S,
+        'w-[264px] h-[326px]':
+            cardType === ProductCardSize.M,
+        'w-[312px] h-[408px] rounded-[5px]': cardType === ProductCardSize.L,
 
-                                        });
+    });
 
     const imageClass = classnames({
                                       'w-[246px] h-[246px] m-[0px]': cardType === ProductCardSize.S,
@@ -84,23 +57,21 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
     const topIconsClass = 'w-[40px] h-[40px] bg-white hover:bg-primary border border-gray-0.5 rounded-full flex items-center justify-center cursor-pointer';
     const bagIconCommonClass = 'absolute right-[11px] w-[40px] h-[40px] bg-gray-0.5 hover:bg-primary rounded-full flex items-center justify-center cursor-pointer'
-    const bagIconClass = classnames({
-                                        [bagIconCommonClass]: true,
-                                        'top-6': cardType === ProductCardSize.S,
-                                        'top-[20px]':
-                                            cardType === ProductCardSize.M,
-                                        'top-5': cardType === ProductCardSize.L,
+    const bagIconClass = classnames(bagIconCommonClass, {
+        'top-6': cardType === ProductCardSize.S,
+        'top-[20px]':
+            cardType === ProductCardSize.M,
+        'top-5': cardType === ProductCardSize.L,
 
-                                    })
+    })
 
     const topBlockIconsCommonClass = 'absolute right-0 flex flex-col items-end gap-[6px]'
-    const topBlockIconsClass = classnames({
-                                              [topBlockIconsCommonClass]: true,
-                                              'mr-4 mt-4': cardType === ProductCardSize.S,
-                                              'mt-4 mr-4':
-                                                  cardType === ProductCardSize.M,
-                                              'mt-5 mr-5': cardType === ProductCardSize.L,
-                                          })
+    const topBlockIconsClass = classnames(topBlockIconsCommonClass, {
+        'mr-4 mt-4': cardType === ProductCardSize.S,
+        'mt-4 mr-4':
+            cardType === ProductCardSize.M,
+        'mt-5 mr-5': cardType === ProductCardSize.L,
+    })
 
 
     return (
@@ -123,17 +94,15 @@ const ProductCard: React.FC<ProductCardProps> = ({
                     </div>
                 </div>
             </div>
-            {showTestImage && (
-                <div className={imageClass}>
-                    <Image
-                        className={'w-full h-full'}
-                        width={width}
-                        height={height}
-                        src="/images/test/apple-product.png"
-                        alt="Product"
-                    />
-                </div>
-            )}
+            <div className={imageClass}>
+                <Image
+                    className={'w-full h-full'}
+                    width={width}
+                    height={height}
+                    src={product.imageSrc}
+                    alt={product.name}
+                />
+            </div>
             <div className="relative">
                 <div
                     onMouseEnter={handleMouseEnterBag}
@@ -147,10 +116,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
                 <div className={'text-body-small text-gray-7'}>Green Apple
                 </div>
                 <div className={'text-body-medium font-medium text-gray-9'}>
-                    $14.99
+                    ${product.price}
                 </div>
                 <StarRating rating={rating}
-                            onRatingChange={(e) => setRating(Number(e.target.value))}/>
+                            onRatingChange={(newRating) => setRating(newRating)}/>
             </div>
         </div>
     );

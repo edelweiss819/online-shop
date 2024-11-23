@@ -4,7 +4,7 @@ import {green} from 'next/dist/lib/picocolors';
 const config: Config = {
     content: [
         './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-        './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+        './src/shared/**/*.{js,ts,jsx,tsx,mdx}',
         './src/app/**/*.{js,ts,jsx,tsx,mdx}',
     ],
     theme: {
@@ -16,6 +16,7 @@ const config: Config = {
                 warning: 'var(--warning)',
                 danger: 'var(--danger)',
                 white: 'var(--white)',
+                blue: 'var(--blue)',
                 gray: {
                     9: 'var(--gray-9)',
                     8: 'var(--gray-8)',
@@ -70,6 +71,7 @@ const config: Config = {
             lineHeight: {
                 heading: '120%',
                 body: '150%',
+                '130': '1.3'
             },
             boxShadow: {
                 'card-standard': '0px 0px 8px 0px var(--hard-primary)',

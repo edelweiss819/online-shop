@@ -1,4 +1,4 @@
-export const extractCardImageSize = (className) => {
+export const extractCardImageSize = (className:string) => {
     const widthMatch = className.match(/w-\[(\d+)px\]/);
     const heightMatch = className.match(/h-\[(\d+)px\]/);
 
