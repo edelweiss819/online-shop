@@ -1,11 +1,9 @@
 @import "./styles/_normalize.css";
 @import './styles/_fonts.css';
-@import './styles/_mixins.css';
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 
 :root {
     --primary: #00B207;
@@ -37,10 +35,20 @@
     --green-gray-0_5: #EDF2EE;
     --green-ghost: #EEf7EE;
     --green-ghost-hover: #D5E3d5;
+    --base-width: 1320px;
 }
 
 body {
     color: var(--gray-9);
     background-color: var(--white);
-    font-family: Poppins, Inter, sans-serif
+    font-family: Poppins, Inter, sans-serif;
+}
+
+.contacts-text-style::after {
+    content: '';
+    display: block;
+    margin-top: 6px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary);
 }

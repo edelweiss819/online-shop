@@ -8,13 +8,14 @@ import AddToWishlist from '@/app/assets/AddToWishlist/AddToWishlist';
 import Eye from '@/app/assets/Eye/Eye';
 import {IProduct} from '@/app/entities/product/model/product';
 import classnames from 'classnames';
+import {PRODUCT_FALLBACK_IMAGE} from '@/app/constants';
 
 export interface IProductCardMini {
     product: IProduct;
 }
 
 const ProductCardMini: React.FC<IProductCardMini> = ({product}) => {
-    const [rating, setRating] = useState<number>(0);
+    const [rating, setRating] = useState<number>(product.rating.rating);
     const [isHoverCard, setIsHoverCard] = useState<boolean>(false);
     const [isHoverBag, setIsHoverBag] = useState<boolean>(false);
     const [isHoverWishlist, setIsHoverWishlist] = useState<boolean>(false);
@@ -39,7 +40,7 @@ const ProductCardMini: React.FC<IProductCardMini> = ({product}) => {
         'w-[40px] h-[40px] bg-white hover:bg-primary rounded-full flex items-center justify-center cursor-pointer';
 
     const blockClass =
-        'h-[116px] w-[424px] bg-white flex grow-0 shrink-1 rounded-[6px] border-gray-1 hover:border-hard-primary hover:shadow-card-standard transition-shadow duration-150 ease-in-out';
+        'h-[116px] w-[424px] bg-white flex grow-0 shrink-1 rounded-[6px] border border-gray-1 hover:border-hard-primary hover:shadow-card-standard transition-shadow duration-150 ease-in-out';
     const leftSubBlock = 'm-[5px] w-[102px] h-[102px]';
 
     const productNameClass = classnames(
@@ -58,7 +59,7 @@ const ProductCardMini: React.FC<IProductCardMini> = ({product}) => {
             <div className={leftSubBlock}>
                 <Image
                     className={'w-full h-full'}
-                    src={product.imageSrc}
+                    src={product.images.small || PRODUCT_FALLBACK_IMAGE}
                     width={102}
                     height={102}
                     alt={product.name}
@@ -73,7 +74,7 @@ const ProductCardMini: React.FC<IProductCardMini> = ({product}) => {
                     <>
             <span
                 className="text-body-medium font-medium leading-body text-color-gray-9">
-              ${product.price}
+              ${product.priceInfo.price}
             </span>
                         <StarRating rating={rating}
                                     onRatingChange={handleRatingChange}/>

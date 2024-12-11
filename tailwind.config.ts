@@ -1,5 +1,5 @@
 import type {Config} from 'tailwindcss';
-import {green} from 'next/dist/lib/picocolors';
+
 
 const config: Config = {
     content: [
@@ -76,6 +76,12 @@ const config: Config = {
             boxShadow: {
                 'card-standard': '0px 0px 8px 0px var(--hard-primary)',
             },
+            width: {
+                'base-width': `var(--base-width)`,
+            },
+            maxWidth: {
+                'base-width': `var(--base-width)`,
+            }
         },
     },
     plugins: [],

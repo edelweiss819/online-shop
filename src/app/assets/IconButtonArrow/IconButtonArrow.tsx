@@ -1,14 +1,25 @@
 import * as React from 'react';
 
-const IconButtonArrow = () => (
+export interface IIButtonArrowProps {
+    width?: number;
+    height?: number;
+    className?: string;
+}
+
+const IconButtonArrow = ({
+                             width = 16.5,
+                             height = 13.555115,
+                             className
+                         }: IIButtonArrowProps) => (
     <svg
-        width={16.5}
-        height={13.555115}
+        width={width}
+        height={height}
         viewBox="0 0 16.5 13.5551"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
-        
+        className={className}
+
     >
         <desc>{'\n\t\t\tCreated with Pixso.\n\t'}</desc>
         <defs/>

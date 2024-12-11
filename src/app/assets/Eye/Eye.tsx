@@ -1,13 +1,19 @@
 import * as React from 'react';
 
 export interface IEyeProps {
+    width?: number;
+    height?: number;
     className?: string;
 }
 
-const Eye: React.FC<IEyeProps> = ({className}) => (
+const Eye: React.FC<IEyeProps> = ({
+                                      width = 20,
+                                      height = 20,
+                                      className
+                                  }) => (
     <svg
-        width={20}
-        height={20}
+        width={width}
+        height={height}
         viewBox="0 0 20 20"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

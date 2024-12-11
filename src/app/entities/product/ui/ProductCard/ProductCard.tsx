@@ -9,9 +9,10 @@ import classnames from 'classnames';
 import Bag from '@/app/assets/Bag/Bag';
 import AddToWishlist from '@/app/assets/AddToWishlist/AddToWishlist';
 import Eye from '@/app/assets/Eye/Eye';
-import {extractCardImageSize} from '../../../../shared/utils';
+import {extractCardImageSize} from '@/app/shared/utils';
 import StarRating from '@/app/features/rating/components/StarRating/StarRating';
 import {IProduct} from '@/app/entities/product/model/product';
+import {PRODUCT_FALLBACK_IMAGE} from '@/app/constants';
 
 export interface ProductCardProps {
     cardType: ProductCardSize;
@@ -22,7 +23,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
                                                      cardType,
                                                      product,
                                                  }) => {
-    const [rating, setRating] = useState<number>(0);
+    const [rating, setRating] = useState<number>(product.rating.rating);
     const [isHoverBag, setIsHoverBag] = useState<boolean>(false);
     const [isHoverWishlist, setIsHoverWishlist] = useState<boolean>(false);
     const [isHoverEye, setIsHoverEye] = useState<boolean>(false);
@@ -99,7 +100,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
                     className={'w-full h-full'}
                     width={width}
                     height={height}
-                    src={product.imageSrc}
+                    src={product.images.small || PRODUCT_FALLBACK_IMAGE}
                     alt={product.name}
                 />
             </div>
@@ -116,7 +117,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
                 <div className={'text-body-small text-gray-7'}>Green Apple
                 </div>
                 <div className={'text-body-medium font-medium text-gray-9'}>
-                    ${product.price}
+                    ${product.priceInfo.price}
                 </div>
                 <StarRating rating={rating}
                             onRatingChange={(newRating) => setRating(newRating)}/>
