@@ -3,9 +3,9 @@
 import React, {useState} from 'react';
 import Image from 'next/image';
 import StarRating from '@/app/features/rating/components/StarRating/StarRating';
-import Bag from '@/app/assets/Bag/Bag';
-import AddToWishlist from '@/app/assets/AddToWishlist/AddToWishlist';
-import Eye from '@/app/assets/Eye/Eye';
+import Bag from '@/app/assets/icons/Bag/Bag';
+import AddToWishlist from '@/app/assets/icons/AddToWishlist/AddToWishlist';
+import Eye from '@/app/assets/icons/Eye/Eye';
 import {IProduct} from '@/app/entities/product/model/product';
 import classnames from 'classnames';
 import {PRODUCT_FALLBACK_IMAGE} from '@/app/constants';

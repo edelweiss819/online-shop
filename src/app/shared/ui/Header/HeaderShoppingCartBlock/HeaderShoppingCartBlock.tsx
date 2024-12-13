@@ -1,5 +1,5 @@
 import React from 'react';
-import AddToWishlistBigIcon from '@/app/assets/AddToWishlistBigIcon/AddToWishlistBigIcon';
+import AddToWishlistBigIcon from '@/app/assets/icons/AddToWishlistBigIcon/AddToWishlistBigIcon';
 import Divider from '@/app/assets/Devider/Devider';
 import IconWithBadge from '@/app/shared/ui/IconWithBadge/IconWithBadge';
 

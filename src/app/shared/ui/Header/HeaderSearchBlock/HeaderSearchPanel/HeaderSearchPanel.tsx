@@ -9,9 +9,9 @@ import {
 
 const HeaderSearchPanel: React.FC = () => {
     return (
-        <div className="flex flex-row items-center">
+        <div className="flex flex-row items-center justify-center ">
             <div
-                className="flex flex-row w-[366px] h-[45px] border-t border-l border-b border-gray-1 pl-4 rounded-tl-[4px] rounded-bl-[4px]  cursor-pointer">
+                className="flex flex-row w-full max-w-[366px] h-[45px] border-t border-l border-b border-gray-1 pl-4 rounded-tl-[4px] rounded-bl-[4px] cursor-pointer">
                 <div
                     className="flex flex-row gap-2 items-center pr-[18px] py-3">
                     <div className={'p-[2.5px]'}>

@@ -17,12 +17,18 @@ export interface IProductRating {
     totalFeedbackCount: number;
 }
 
+export interface IProductCategory {
+    name: string;
+    id: string;
+}
 
 export interface IProduct {
     id: string;
     name: string;
-    category: string;
+    category: IProductCategory;
+    quantity: number;
     tags: string[];
+    isNew: boolean;
     priceInfo: IPrice;
     images: IImages;
     rating: IProductRating;

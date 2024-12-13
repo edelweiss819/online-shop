@@ -75,12 +75,16 @@ const config: Config = {
             },
             boxShadow: {
                 'card-standard': '0px 0px 8px 0px var(--hard-primary)',
+                'feature-shadow': `0px 8px 40px 0px rgba(0, 38, 3, 0.08)`,
             },
             width: {
                 'base-width': `var(--base-width)`,
             },
             maxWidth: {
                 'base-width': `var(--base-width)`,
+            },
+            backgroundImage: {
+                'big-banner-gradient': `var(--big-banner-gradient)`
             }
         },
     },

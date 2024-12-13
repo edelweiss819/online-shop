@@ -21,12 +21,11 @@ const IconButtonArrow = ({
         className={className}
 
     >
-        <desc>{'\n\t\t\tCreated with Pixso.\n\t'}</desc>
         <defs/>
         <path
             id="Vector"
             d="M15.75 6.77L0.75 6.77"
-            stroke="#EDF2EE"
+            stroke="currentColor"
             strokeOpacity={1}
             strokeWidth={1.5}
             strokeLinejoin="round"
@@ -35,7 +34,7 @@ const IconButtonArrow = ({
         <path
             id="Vector"
             d="M9.7 0.75L15.75 6.77L9.7 12.8"
-            stroke="#EDF2EE"
+            stroke="currentColor"
             strokeOpacity={1}
             strokeWidth={1.5}
             strokeLinejoin="round"

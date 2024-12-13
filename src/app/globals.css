@@ -36,6 +36,7 @@
     --green-ghost: #EEf7EE;
     --green-ghost-hover: #D5E3d5;
     --base-width: 1320px;
+    --big-banner-gradient: linear-gradient(108.43deg, rgba(0, 0, 0, 0.6) 10.399%, rgba(0, 0, 0, 0) 59.431%);
 }
 
 body {

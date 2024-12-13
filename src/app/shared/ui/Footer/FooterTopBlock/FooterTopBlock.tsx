@@ -25,9 +25,9 @@ const FooterTopBlock: React.FC = () => {
                                 Pellentesque eu nibh eget mauris congue mattis matti.
                             </span>
                         </div>
-                        <div className={'mt-[55.5px] flex flex-row w-full max-w-[518px]'}>
+                        <div className={'mt-[55.5px] flex flex-row flex-1 max-w-[518px]'}>
                             <div className={'flex flex-row border border-gray-1 rounded-[46px] bg-white h-[52px] w-full'}>
-                                <span className={'flex text-body-medium leading-body font-normal text-gray-5 my-[14px] mx-6 h-[24px] flex-grow'}>
+                                <span className={'flex text-body-medium leading-body font-normal text-gray-5 my-[14px] mx-6 h-[24px] w-full'}>
                                     Your email address
                                 </span>
                                 <Button

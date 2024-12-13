@@ -6,9 +6,9 @@ import {
 } from '@/app/entities/product/ui/ProductCard/ProductCard.enums';
 import Image from 'next/image';
 import classnames from 'classnames';
-import Bag from '@/app/assets/Bag/Bag';
-import AddToWishlist from '@/app/assets/AddToWishlist/AddToWishlist';
-import Eye from '@/app/assets/Eye/Eye';
+import Bag from '@/app/assets/icons/Bag/Bag';
+import AddToWishlist from '@/app/assets/icons/AddToWishlist/AddToWishlist';
+import Eye from '@/app/assets/icons/Eye/Eye';
 import {extractCardImageSize} from '@/app/shared/utils';
 import StarRating from '@/app/features/rating/components/StarRating/StarRating';
 import {IProduct} from '@/app/entities/product/model/product';

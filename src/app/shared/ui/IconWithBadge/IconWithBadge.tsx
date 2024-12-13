@@ -1,5 +1,5 @@
 import React from 'react'
-import BagBigIcon from '@/app/assets/BagBigIcon/BagBigIcon';
+import BagBigIcon from '@/app/assets/icons/BagBigIcon/BagBigIcon';
 
 const IconWithBadge: React.FC<{ badgeCount: number }> = ({badgeCount}) => (
     <div className={'relative'}>
