@@ -17,6 +17,7 @@ const config: Config = {
                 danger: 'var(--danger)',
                 white: 'var(--white)',
                 blue: 'var(--blue)',
+                yellow: 'var(--yellow)',
                 gray: {
                     9: 'var(--gray-9)',
                     8: 'var(--gray-8)',
@@ -28,6 +29,7 @@ const config: Config = {
                     2: 'var(--gray-2)',
                     1: 'var(--gray-1)',
                     0.5: 'var(--gray-0_5)',
+                    'secondary': `var(--gray-secondary)`,
                 },
                 'green-gray': {
                     9: 'var(--green-gray-9)',
@@ -74,7 +76,7 @@ const config: Config = {
                 '130': '1.3'
             },
             boxShadow: {
-                'card-standard': '0px 0px 8px 0px var(--hard-primary)',
+                'card-standard': '0px 0px 12px 0px var(--hard-primary)',
                 'feature-shadow': `0px 8px 40px 0px rgba(0, 38, 3, 0.08)`,
             },
             width: {

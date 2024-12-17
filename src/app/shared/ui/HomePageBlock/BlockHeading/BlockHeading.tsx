@@ -6,9 +6,9 @@ export type BlockHeadingProps = {
 
 const BlockHeading: React.FC<BlockHeadingProps> = ({title}) => {
     return (
-        <span className={'text-heading-06 font-semibold leading-heading text-gray-9 mb-8'}>
+        <div className={'text-heading-06 font-semibold leading-heading text-gray-9 mb-8'}>
             {title}
-        </span>
+        </div>
     );
 };
 

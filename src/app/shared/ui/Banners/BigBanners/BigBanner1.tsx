@@ -1,8 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
 import BannersLabel from '@/app/shared/ui/Label/BannersLabel/BannersLabel';
-import IconButton from '@/app/shared/ui/IconButton/IconButton';
-import {IconButtonSize} from '@/app/shared/ui/IconButton/IconButton.enums';
+import ButtonWithArrow from '@/app/shared/ui/ButtonWithArrow/ButtonWithArrow';
+import {ButtonWithArrowSize} from '@/app/shared/ui/ButtonWithArrow/ButtonWithArrow.enums';
 import {ButtonFillStyle} from '@/app/shared/ui/Button/Button.enums';
 
 export interface IBigBanner1Props {
@@ -47,9 +47,9 @@ const BigBanner1: React.FC<IBigBanner1Props> = ({
                         </div>
                     </div>
                     <div className={'mt-7'}>
-                        <IconButton text={'Shop now'}
-                                    size={IconButtonSize.L}
-                                    fill={ButtonFillStyle.BORDER}/>
+                        <ButtonWithArrow text={'Shop now'}
+                                         size={ButtonWithArrowSize.L}
+                                         fill={ButtonFillStyle.BORDER}/>
                     </div>
                 </div>
             </div>

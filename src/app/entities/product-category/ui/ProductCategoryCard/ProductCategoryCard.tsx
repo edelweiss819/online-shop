@@ -21,7 +21,7 @@ const ProductCategoryCard: React.FC<ProductCategoryCardProps> = ({
     const handleLeaveCard = () => setHoverCard(false);
     const textClass = classnames('text-body-large font-medium leading-body mt-4 mb-6 text-center', {
         'text-gray-9': !isHoverCard,
-        'text-hard-primary': isHoverCard,
+        'text-hard-primary z-10': isHoverCard,
     })
 
     return (

@@ -2,25 +2,25 @@
 import React, {useState} from 'react';
 import classnames from 'classnames';
 import Link from 'next/link';
-import {IconButtonSize} from '@/app/shared/ui/IconButton/IconButton.enums';
-import IconButtonArrow from '@/app/assets/IconButtonArrow/IconButtonArrow';
+import {ButtonWithArrowSize} from '@/app/shared/ui/ButtonWithArrow/ButtonWithArrow.enums';
 import {ButtonFillStyle} from '@/app/shared/ui/Button/Button.enums';
+import IconButtonArrow from '@/app/assets/IconButtonArrow/IconButtonArrow';
 
-export interface IIconButtonProps {
+export type ButtonWithArrowProps = {
     text: string;
-    size: IconButtonSize;
+    size: ButtonWithArrowSize;
     fill: ButtonFillStyle;
     onClick?: () => void;
     href?: string;
 }
 
-const IconButton: React.FC<IIconButtonProps> = ({
-                                                    text,
-                                                    size,
-                                                    onClick,
-                                                    fill,
-                                                    href
-                                                }) => {
+const ButtonWithArrow: React.FC<ButtonWithArrowProps> = ({
+                                                             text,
+                                                             size,
+                                                             onClick,
+                                                             fill,
+                                                             href
+                                                         }) => {
     const [isHoverButton, setIsHoverButton] = useState<boolean>(false);
 
     const commonButtonClass = 'rounded-[43px] inline-flex items-center justify-center cursor-pointer border-2';
@@ -31,9 +31,9 @@ const IconButton: React.FC<IIconButtonProps> = ({
                                            'bg-gray-8 border border-gray-8': fill === ButtonFillStyle.SUBSCRIBE
                                        });
     const buttonSizeClass = classnames({
-                                           'h-[36px]': size === IconButtonSize.S,
-                                           'h-[45px]': size === IconButtonSize.M,
-                                           'h-[51px]': size === IconButtonSize.L,
+                                           'h-[36px]': size === ButtonWithArrowSize.S,
+                                           'h-[45px]': size === ButtonWithArrowSize.M,
+                                           'h-[51px]': size === ButtonWithArrowSize.L,
                                        });
     const buttonClass = classnames(commonButtonClass, buttonSizeClass, buttonFillClass);
     const textCommonClass = 'font-semibold leading-heading';
@@ -45,16 +45,16 @@ const IconButton: React.FC<IIconButtonProps> = ({
                                       });
 
     const textClass = classnames(textCommonClass, {
-        'text-body-tiny py-[10px]': size === IconButtonSize.S,
-        'text-body-small py-[14px]': size === IconButtonSize.M,
-        'text-body-medium py-4': size === IconButtonSize.L,
+        'text-body-tiny py-[10px]': size === ButtonWithArrowSize.S,
+        'text-body-small py-[14px]': size === ButtonWithArrowSize.M,
+        'text-body-medium py-4': size === ButtonWithArrowSize.L,
     }, textColorClass);
 
     const blockCommonClass = 'inline-flex items-center justify-center gap-3';
     const blockClass = classnames(blockCommonClass, {
-        'px-6': size === IconButtonSize.S,
-        'px-8 ': size === IconButtonSize.M,
-        'px-10': size === IconButtonSize.L,
+        'px-6': size === ButtonWithArrowSize.S,
+        'px-8 ': size === ButtonWithArrowSize.M,
+        'px-10': size === ButtonWithArrowSize.L,
     });
 
     const arrowColorClass = classnames({
@@ -88,4 +88,4 @@ const IconButton: React.FC<IIconButtonProps> = ({
     return buttonContent;
 };
 
-export default IconButton;
+export default ButtonWithArrow;

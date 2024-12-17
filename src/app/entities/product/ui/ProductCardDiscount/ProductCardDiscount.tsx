@@ -13,6 +13,7 @@ import ProductInfoBlock
     from '@/app/entities/product/ui/ProductCardDiscount/ProductInfoBlock/ProductInfoBlock';
 import OfferEndsBlock
     from '@/app/entities/product/ui/ProductCardDiscount/OfferEndsBlock/OfferEndsBlock';
+import classnames from 'classnames';
 
 
 export interface IProductCardDiscount {
@@ -22,14 +23,17 @@ export interface IProductCardDiscount {
 const ProductCardDiscount: React.FC<IProductCardDiscount> = ({product}) => {
     const [isHoverCard, setIsHoverCard] = useState<boolean>(false);
     const currentTimeInSeconds = Math.floor(Date.now() / 1000);
+
     const [endTime, setEndTime] = useState(
         formatDateWithLeadingZero(
             calcDiscountTimeRemaining(product.priceInfo.discount?.endTime!, currentTimeInSeconds)));
 
     const handleMouseEnterCard = () => setIsHoverCard(true);
     const handleMouseLeaveCard = () => setIsHoverCard(false);
-
-    const blockStyle = 'relative w-[528px] h-[654px] bg-white border border-gray-1 hover:border-hard-primary hover:shadow-card-standard transition-shadow duration-150 ease-in-out';
+    const blockStyle = classnames('relative w-[528px] h-[654px] bg-white', {
+        'border border-hard-primary shadow-card-standard transition-shadow duration-150 ease-in-out z-10': isHoverCard,
+        'border border-gray-1 z-0': !isHoverCard,
+    })
 
 
     useEffect(() => {

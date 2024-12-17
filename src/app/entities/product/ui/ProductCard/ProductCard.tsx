@@ -27,6 +27,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
     const [isHoverBag, setIsHoverBag] = useState<boolean>(false);
     const [isHoverWishlist, setIsHoverWishlist] = useState<boolean>(false);
     const [isHoverEye, setIsHoverEye] = useState<boolean>(false);
+    const [isHoverCard, setIsHoverCard] = useState<boolean>(false);
 
     const handleMouseEnterBag = () => setIsHoverBag(true);
     const handleMouseLeaveBag = () => setIsHoverBag(false);
@@ -34,12 +35,17 @@ const ProductCard: React.FC<ProductCardProps> = ({
     const handleMouseLeaveWishlist = () => setIsHoverWishlist(false);
     const handleMouseEnterEye = () => setIsHoverEye(true);
     const handleMouseLeaveEye = () => setIsHoverEye(false);
+    const handleMouseEnterCard = () => setIsHoverCard(true);
+    const handleMouseLeaveCard = () => setIsHoverCard(false);
 
 
-    const commonProductCardClass = 'bg-white m-[5px] border border-gray-1 hover:border-primary hover:shadow-card-standard transition-shadow duration-150 ease-in-out ';
+    const commonProductCardClass = classnames('bg-white', {
+        'border border-hard-primary shadow-card-standard transition-shadow duration-150 ease-in-out z-10': isHoverCard,
+        'border border-gray-1 z-0': !isHoverCard,
+    })
     const productCardClass = classnames(commonProductCardClass, {
         'w-[248px] h-[340px] rounded-[5px]': cardType === ProductCardSize.S,
-        'w-[264px] h-[326px]':
+        'w-[264px] h-[327px]':
             cardType === ProductCardSize.M,
         'w-[312px] h-[408px] rounded-[5px]': cardType === ProductCardSize.L,
 
@@ -76,7 +82,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
 
     return (
-        <div className={productCardClass}>
+        <div className={productCardClass}
+             onMouseEnter={handleMouseEnterCard}
+             onMouseLeave={handleMouseLeaveCard}>
             <div className="relative">
                 <div className={topBlockIconsClass}>
                     <div
