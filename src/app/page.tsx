@@ -1,16 +1,18 @@
 import React from 'react';
-import FeaturedBlock from '@/app/shared/ui/FeaturedBlock/FeaturedBlock';
-import TopBannersBlock from '@/app/shared/ui/BannersBlocks/TopBannersBlock/TopBannersBlock';
+import FeaturedBlock from '@/app/shared/ui/featured-block/featured-block';
+import TopBannersBlock from '@/app/shared/ui/banners-blocks/top-banners-block/top-banners-block';
 import {ProductCategory} from '@/app/entities/product-category/model/product-category';
-import PopularCategoriesBlock from '@/app/shared/ui/PopularCategoriesBlock/PopularCategoriesBlock';
-import PopularProductsBlock from '@/app/shared/ui/PopularProductsBlock/PopularProductsBlock';
-import MediumBanner1 from '@/app/shared/ui/Banners/MediumBanners/MediumBanner1';
-import MediumBanner2 from '@/app/shared/ui/Banners/MediumBanners/MediumBanner2';
-import MediumBanner3 from '@/app/shared/ui/Banners/MediumBanners/MediumBanner3';
+import PopularCategoriesBlock
+    from '@/app/shared/ui/popular-categories-block/popular-categories-block';
+import PopularProductsBlock from '@/app/shared/ui/popular-products-block/popular-products-block';
 import {getCurrentServerTime} from '@/app/shared/utils';
 import SecondBannersBlock
-    from '@/app/shared/ui/BannersBlocks/SecondBannersBlock/SecondBannersBlock';
-import HotDealsBlock from '@/app/shared/ui/HotDealsBlock/HotDealsBlock';
+    from '@/app/shared/ui/banners-blocks/second-banners-block/second-banners-block';
+import HotDealsBlock from '@/app/shared/ui/hot-deals-block/hot-deals-block';
+import LargeDiscountBanner_1
+    from '@/app/shared/ui/banners/large-discount-banners/large-discount-banner_1';
+import CentredHomePageBlock from '@/app/shared/ui/centred-home-page-block/centred-home-page-block';
+import FeaturedProductsBlock from '@/app/shared/ui/featured-products-block/featured-products-block';
 
 const testProduct1 = {
     id: '456',
@@ -26,7 +28,7 @@ const testProduct1 = {
         price: 20.99,
         discount: {
             size: 50,
-            endTime: 1735596000
+            endTime: 1735682400,
         }
     },
     images: {
@@ -50,31 +52,54 @@ const FruitCategory: ProductCategory = {
 const ProductCategoriesTest = Array(12).fill(FruitCategory);
 const ProductsArrayTest = Array(10).fill(testProduct1);
 const HotDealsProductArray = Array(12).fill(testProduct1);
+const FeaturedProductArray = Array(5).fill(testProduct1);
 
 
 const Home: React.FC = async () => {
     const currentTimeFromServer = await getCurrentServerTime();
 
+
     return (
-        <div className="flex flex-col">
-            <div className={'mt-6 max-w-base-width w-full mx-auto'}>
-                <TopBannersBlock/>
+        <div>
+            <CentredHomePageBlock color={'white'}>
                 <div className={'mt-6'}>
-                    <FeaturedBlock/>
+                    <TopBannersBlock/>
+                    <div className={'mt-6'}>
+                        <FeaturedBlock/>
+                    </div>
+                    <PopularCategoriesBlock categories={ProductCategoriesTest}
+                                            mt={60}/>
+                    <PopularProductsBlock products={ProductsArrayTest}
+                                          mt={50}/>
+                    <div className={'my-[60px]'}>
+                        <SecondBannersBlock currentTimeFromServer={currentTimeFromServer}/>
+                    </div>
                 </div>
-                <PopularCategoriesBlock categories={ProductCategoriesTest}
-                                        mt={60}/>
-                <PopularProductsBlock products={ProductsArrayTest}
-                                      mt={50}/>
+            </CentredHomePageBlock>
+            <CentredHomePageBlock color={'gray-secondary'}>
+                <div className={'max-w-base-width w-full mx-auto'}>
+                    <div className={'py-[60px]'}>
+                        <HotDealsBlock products={HotDealsProductArray}
+                                       currentTimeFromServer={currentTimeFromServer}/>
+                    </div>
+                </div>
+            </CentredHomePageBlock>
+            <CentredHomePageBlock color={'white'}>
+                <div className={'mt-6 ]'}>
+                    <LargeDiscountBanner_1 imageAlt={'Summer Sale'}
+                                           bannerBackground={1}
+                                           discountSize={37}/>
+                </div>
                 <div className={'mt-[60px]'}>
-                    <SecondBannersBlock currentTimeFromServer={currentTimeFromServer}/>
+                    <FeaturedProductsBlock products={FeaturedProductArray}/>
                 </div>
-            </div>
-            <div className={'flex flex-col bg-gray-secondary'}>
-                <div className={'pt-[60px] max-w-base-width w-full mx-auto'}>
-                    <HotDealsBlock products={HotDealsProductArray}/>
+            </CentredHomePageBlock>
+            <CentredHomePageBlock color={'gray-secondary'}>
+                <div className={'py-[60px]'}>
+
+
                 </div>
-            </div>
+            </CentredHomePageBlock>
         </div>
     );
 }

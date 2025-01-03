@@ -1,7 +1,7 @@
 import type {Metadata} from 'next'
 import './globals.css'
-import Header from '@/app/shared/ui/Header/Header';
-import Footer from '@/app/shared/ui/Footer/Footer';
+import Header from '@/app/shared/ui/header/header';
+import Footer from '@/app/shared/ui/footer/footer';
 
 export const metadata: Metadata = {
     title: 'Shopery',
