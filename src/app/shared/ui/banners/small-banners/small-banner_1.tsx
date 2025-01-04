@@ -13,7 +13,7 @@ const SmallBanner_1: React.FC<ISmallBanner1Props> = ({
                                                          imageAlt,
                                                          discountSize,
                                                      }) => {
-    const imageSrc = `/images/test/BannersBackgrounds/SmallBanners/SmallBanner_${bannerBackground}.png`;
+    const imageSrc = `/images/test/banners-backgrounds/small-banners/small-banner_${bannerBackground}.png`;
 
     return (
         <div className="max-w-[423px] h-[288px] relative">

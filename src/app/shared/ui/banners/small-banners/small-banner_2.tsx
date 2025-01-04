@@ -11,7 +11,7 @@ const SmallBanner_2: React.FC<ISmallBanner2Props> = ({
                                                          imageAlt,
                                                          bannerBackground,
                                                      }) => {
-    const imageSrc = `/images/test/BannersBackgrounds/SmallBanners/SmallBanner_${bannerBackground}.png`;
+    const imageSrc = `/images/test/banners-backgrounds/small-banners/small-banner_${bannerBackground}.png`;
 
     return (
         <div className="max-w-[423px] w-full h-[288px] relative rounded-[16px] overflow-hidden">

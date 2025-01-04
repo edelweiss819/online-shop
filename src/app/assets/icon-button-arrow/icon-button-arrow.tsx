@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export interface IIButtonArrowProps {
+export interface IIconButtonArrowProps {
     width?: number;
     height?: number;
     className?: string;
@@ -10,7 +10,7 @@ const IconButtonArrow = ({
                              width = 16.5,
                              height = 13.555115,
                              className
-                         }: IIButtonArrowProps) => (
+                         }: IIconButtonArrowProps) => (
     <svg
         width={width}
         height={height}

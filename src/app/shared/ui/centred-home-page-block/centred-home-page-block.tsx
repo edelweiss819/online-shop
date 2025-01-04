@@ -10,8 +10,12 @@ const CentredHomePageBlock: React.FC<CentredHomePageBlockProps> = ({
                                                                        color = 'white',
                                                                        children
                                                                    }) => {
+    const wrapperClass = classnames({
+                                        'flex flex-col': true,
+                                        'bg-white': color === 'white',
+                                        'bg-gray-secondary': color === 'gray-secondary',
+                                    });
 
-    const wrapperClass = classnames(`flex flex-col bg-${color}`)
     return (
         <div>
             <div className={wrapperClass}>

@@ -1,10 +1,10 @@
 import React from 'react';
 import {IProduct} from '@/app/entities/product/model/product';
-import BlockHeading from '@/app/shared/ui/home-page-block/block-heading/block-heading';
 import ProductCardDiscount
     from '@/app/entities/product/ui/product-card-discount/product-card-discount';
 import ProductCard from '@/app/entities/product/ui/product-card/product-card';
 import {ProductCardSize} from '@/app/entities/product/ui/product-card/product-card.enums';
+import HomePageBlock from '@/app/shared/ui/home-page-block/home-page-block';
 
 export type HotDealsBlockProps = {
     products: IProduct[];
@@ -19,8 +19,7 @@ const HotDealsBlock: React.FC<HotDealsBlockProps> = ({
     const otherProducts = products.slice(1);
 
     return (
-        <>
-            <BlockHeading title={'Hot Deals'}/>
+        <HomePageBlock title={'Hot Deals'}>
             <div className="grid grid-cols-5 grid-rows-3 gap-0">
                 <div className="col-span-2 row-span-2">
                     <ProductCardDiscount product={mainProduct}
@@ -34,7 +33,7 @@ const HotDealsBlock: React.FC<HotDealsBlockProps> = ({
                     </div>
                 ))}
             </div>
-        </>
+        </HomePageBlock>
     );
 };
 

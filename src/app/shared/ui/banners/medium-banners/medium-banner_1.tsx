@@ -54,7 +54,7 @@ const MediumBanner_1: React.FC<MediumBanner1Props> = ({
     const timerTextStyle = 'text-body-xxl text-white leading-body font-normal';
     const timerColonStyle = 'pt-[6px] font-semibold text-gray-2';
 
-    const imageSrc = `/images/test/BannersBackgrounds/MediumBanners/MediumBanner_${bannerBackground}.png`;
+    const imageSrc = `/images/test/banners-backgrounds/medium-banners/medium-banner_${bannerBackground}.png`;
 
 
     return (

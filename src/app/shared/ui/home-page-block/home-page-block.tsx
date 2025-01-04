@@ -3,16 +3,19 @@ import BlockHeading from '@/app/shared/ui/home-page-block/block-heading/block-he
 
 export type HomePageBlockProps = {
     title: string;
+    navElement?: React.ReactNode;
     children: React.ReactNode;
 }
 
 const HomePageBlock: React.FC<HomePageBlockProps> = ({
                                                          title,
                                                          children,
+                                                         navElement,
                                                      }) => {
     return (
         <>
-            <BlockHeading title={title}/>
+            <BlockHeading title={title}
+                          navElement={navElement}/>
             {children}
         </>
     );

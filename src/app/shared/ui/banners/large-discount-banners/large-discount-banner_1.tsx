@@ -17,7 +17,7 @@ const LargeDiscountBanner_1: React.FC<LargeDiscountBanner1Props> = ({
                                                                         discountSize
                                                                     }) => {
 
-    const imageSrc = `/images/test/BannersBackgrounds/LargeDiscountBanners/LargeDiscountBanner_${bannerBackground}.png`;
+    const imageSrc = `/images/test/banners-backgrounds/large-discount-banners/large-discount-banner_${bannerBackground}.png`;
 
     return (
         <div className="w-[1320px] h-[358px] relative">

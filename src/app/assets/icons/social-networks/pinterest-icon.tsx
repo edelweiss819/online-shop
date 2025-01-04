@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {SocialNetworksIconsType} from '@/app/types/SVGComponentsTypes/SocialNetworksIconsType';
+import {SocialNetworksIconsType} from '@/app/types/svg-components-types/social-networks-icon-type';
 
 const PinterestIcon: React.FC<SocialNetworksIconsType> = () => (
     <svg

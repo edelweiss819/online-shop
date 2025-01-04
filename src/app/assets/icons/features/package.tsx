@@ -1,7 +1,7 @@
 import * as React from 'react';
-import {FeatureIconsType} from '@/app/types/SVGComponentsTypes/FeatureIconType';
+import {FeatureIconType} from '@/app/types/svg-components-types/feature-icon-type';
 
-const Package: React.FC<FeatureIconsType> = ({className}) => (
+const Package: React.FC<FeatureIconType> = ({className}) => (
     <svg
         width={40}
         height={40}

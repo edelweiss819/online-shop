@@ -13,6 +13,10 @@ import LargeDiscountBanner_1
     from '@/app/shared/ui/banners/large-discount-banners/large-discount-banner_1';
 import CentredHomePageBlock from '@/app/shared/ui/centred-home-page-block/centred-home-page-block';
 import FeaturedProductsBlock from '@/app/shared/ui/featured-products-block/featured-products-block';
+import {User, UserRole} from '@/app/entities/user/model/user';
+import HomePageCommentsBlock
+    from '@/app/shared/ui/home-page-comments-block/home-page-comments-block';
+import {UserComment} from '@/app/entities/user-comment/model/user-comment';
 
 const testProduct1 = {
     id: '456',
@@ -41,6 +45,35 @@ const testProduct1 = {
     },
 };
 
+const TestUser: User = {
+    id: '1',
+    name: 'John',
+    surname: 'Doe',
+    email: 'john@doe.com',
+    role: UserRole.Customer,
+    avatarSrc: '/images/test/users-avatars/user-avatar_1.png',
+}
+
+
+const TestComment: UserComment = {
+    author: {
+        id: TestUser.id,
+        name: TestUser.name,
+        surname: TestUser.surname,
+        role: TestUser.role,
+        avatarSrc: TestUser.avatarSrc,
+    },
+    content: 'Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales. Donec sed neque eget (Testimonial Card)',
+    rating: 5,
+    id: 1
+
+}
+
+const TestCommentArray = Array(49).fill(null).map((_, index) => ({
+    ...TestComment,
+    id: index + 1
+}));
+
 const FruitCategory: ProductCategory = {
     id: '1',
     name: 'Fruits',
@@ -48,6 +81,7 @@ const FruitCategory: ProductCategory = {
     href: '/categories/fruits',
     imageSrc: '/images/test/categories/1.png',
 };
+
 
 const ProductCategoriesTest = Array(12).fill(FruitCategory);
 const ProductsArrayTest = Array(10).fill(testProduct1);
@@ -96,8 +130,7 @@ const Home: React.FC = async () => {
             </CentredHomePageBlock>
             <CentredHomePageBlock color={'gray-secondary'}>
                 <div className={'py-[60px]'}>
-
-
+                    <HomePageCommentsBlock comments={TestCommentArray}/>
                 </div>
             </CentredHomePageBlock>
         </div>

@@ -16,7 +16,7 @@ const MediumBanner_3: React.FC<MediumBanner3Props> = ({
                                                           price,
                                                       }) => {
 
-    const imageSrc = `/images/test/BannersBackgrounds/MediumBanners/MediumBanner_${bannerBackground}.png`;
+    const imageSrc = `/images/test/banners-backgrounds/medium-banners/medium-banner_${bannerBackground}.png`;
 
     return (
         <div className={'w-[424px] h-[536px] relative'}>
