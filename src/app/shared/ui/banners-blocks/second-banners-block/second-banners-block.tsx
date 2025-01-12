@@ -9,7 +9,7 @@ export type SecondBannersBlockProps = {
 
 const SecondBannersBlock: React.FC<SecondBannersBlockProps> = ({currentTimeFromServer}) => {
     return (
-        <div className={'flex flex-row gap-6'}>
+        <div className={'flex flex-row gap-6 lg:mx-[20px] xl:mx-0'}>
             <MediumBanner_1 imageAlt={'Sale of Month'}
                             bannerBackground={1}
                             currentTimeFromServer={currentTimeFromServer}/>

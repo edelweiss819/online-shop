@@ -7,7 +7,6 @@ import classnames from 'classnames';
 import Bag from '@/app/assets/icons/bag/bag';
 import AddToWishlist from '@/app/assets/icons/add-to-wishlist/add-to-wishlist';
 import Eye from '@/app/assets/icons/eye/eye';
-import {extractCardImageSize} from '@/app/shared/utils';
 import StarRating from '@/app/features/rating/components/star-rating/star-rating';
 import {IProduct} from '@/app/entities/product/model/product';
 import {PRODUCT_FALLBACK_IMAGE} from '@/app/constants';
@@ -42,26 +41,22 @@ const ProductCard: React.FC<ProductCardProps> = ({
         'border border-gray-1 z-0': !isHoverCard,
     })
     const productCardClass = classnames(commonProductCardClass, {
-        'w-[248px] h-[340px] rounded-[5px]': cardType === ProductCardSize.S,
-        'w-[264px] h-[327px]':
+        'lg:min-w-[220px]  lg:flex-1 xl:w-[248px] h-[340px] rounded-[5px]': cardType === ProductCardSize.S,
+        'lg:min-w-[210px] lg:flex-1  xl:max-w-full xl:w-[264px] h-[327px]':
             cardType === ProductCardSize.M,
-        'w-[312px] h-[408px] rounded-[5px]': cardType === ProductCardSize.L,
+        'lg:min-w-[312px] h-[408px] lg:flex-1  rounded-[5px] ': cardType === ProductCardSize.L,
 
     });
 
     const imageClass = classnames({
-                                      'w-[246px] h-[246px] m-[0px]': cardType === ProductCardSize.S,
-                                      'w-[254px] h-[230px] m-[5px]': cardType === ProductCardSize.M,
-                                      'w-[302px] h-[302px] m-[5px]': cardType === ProductCardSize.L,
+                                      'lg:w-[200px] xl:w-[246px] h-[246px] m-[0px] relative': cardType === ProductCardSize.S,
+                                      ' xl:max-w-full  xl:w-[254px] h-[230px] lg:m-[2px] xl:m-[5px] relative': cardType === ProductCardSize.M,
+                                      'w-[302px] h-[302px] m-[5px] relative': cardType === ProductCardSize.L,
                                   })
-    const {
-        width,
-        height
-    } = extractCardImageSize(imageClass);
 
 
-    const topIconsClass = 'w-[40px] h-[40px] bg-white hover:bg-primary border border-gray-0.5 rounded-full flex items-center justify-center cursor-pointer';
-    const bagIconCommonClass = 'absolute right-[11px] w-[40px] h-[40px] bg-gray-0.5 hover:bg-primary rounded-full flex items-center justify-center cursor-pointer'
+    const topIconsClass: string = 'w-[40px] h-[40px] bg-white hover:bg-primary border border-gray-0.5 rounded-full flex items-center justify-center cursor-pointer';
+    const bagIconCommonClass: string = 'absolute right-[11px] w-[40px] h-[40px] bg-gray-0.5 hover:bg-primary rounded-full flex items-center justify-center cursor-pointer'
     const bagIconClass = classnames(bagIconCommonClass, {
         'top-6': cardType === ProductCardSize.S,
         'top-[20px]':
@@ -70,7 +65,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
     })
 
-    const topBlockIconsCommonClass = 'absolute right-0 flex flex-col items-end gap-[6px]'
+    const topBlockIconsCommonClass: string = 'absolute right-0 flex flex-col items-end gap-[6px]'
     const topBlockIconsClass = classnames(topBlockIconsCommonClass, {
         'mr-4 mt-4': cardType === ProductCardSize.S,
         'mt-4 mr-4':
@@ -83,7 +78,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
         <div className={productCardClass}
              onMouseEnter={handleMouseEnterCard}
              onMouseLeave={handleMouseLeaveCard}>
-            <div className="relative">
+            <div className="relative flex-1">
                 <div className={topBlockIconsClass}>
                     <div
                         onMouseEnter={handleMouseEnterWishlist}
@@ -104,8 +99,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
             <div className={imageClass}>
                 <Image
                     className={'w-full h-full'}
-                    width={width}
-                    height={height}
+                    fill
                     src={product.images.small || PRODUCT_FALLBACK_IMAGE}
                     alt={product.name}
                 />
@@ -119,7 +113,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
                         className={isHoverBag ? 'text-white' : 'text-gray-9'}/>
                 </div>
             </div>
-            <div className={'mt-3 w-240px pl-[11px]'}>
+            <div className={'mt-3 lg-w-[200px] xl-w-[240px] pl-[11px]'}>
                 <div className={'text-body-small text-gray-7'}>Green Apple
                 </div>
                 <div className={'text-body-medium font-medium text-gray-9'}>

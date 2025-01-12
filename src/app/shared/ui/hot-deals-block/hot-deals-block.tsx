@@ -20,14 +20,14 @@ const HotDealsBlock: React.FC<HotDealsBlockProps> = ({
 
     return (
         <HomePageBlock title={'Hot Deals'}>
-            <div className="grid grid-cols-5 grid-rows-3 gap-0">
+            <div className="grid grid-cols-5 grid-rows-3 lg:mx-[20px] xl:mx-0 ">
                 <div className="col-span-2 row-span-2">
                     <ProductCardDiscount product={mainProduct}
                                          currentTimeFromServer={currentTimeFromServer}/>
                 </div>
                 {otherProducts.map((product, index) => (
                     <div key={index}
-                         className="col-span-1 z-0 hover:z-10">
+                         className="col-span-1 z-0 hover:z-10 ">
                         <ProductCard cardType={ProductCardSize.M}
                                      product={product}/>
                     </div>

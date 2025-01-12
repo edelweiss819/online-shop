@@ -20,14 +20,18 @@ const LargeDiscountBanner_1: React.FC<LargeDiscountBanner1Props> = ({
     const imageSrc = `/images/test/banners-backgrounds/large-discount-banners/large-discount-banner_${bannerBackground}.png`;
 
     return (
-        <div className="w-[1320px] h-[358px] relative">
+        <div className="max-w-[1320px] h-[358px] relative lg:mx-[20px] xl:mx-0">
             <Image
                 src={imageSrc}
                 alt={imageAlt}
                 fill
                 priority={false}
-            />
-            <div className="absolute top-[60px] left-[828px]">
+                style={{
+                    objectFit: 'cover',
+                    borderRadius: '8px',
+
+                }}/>
+            <div className="absolute top-[60px] lg:left-[600px] xl:left-[828px]">
                 <div className={'text-body-medium font-medium leading-[100%] text-white'}>
                     Summer Sale
                 </div>

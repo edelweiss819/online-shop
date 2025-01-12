@@ -6,7 +6,7 @@ import {
 
 const FeaturedBlock: React.FC = () => {
     return (
-        <div className={'flex flex-row gap-[5.3px] w-full max-w-base-width items-center justify-center py-10 px-10 rounded-[8px] shadow-feature-shadow'}>
+        <div className={'flex flex-row gap-[5.3px] w-full max-w-base-width items-center justify-center py-10 px-10 rounded-[8px] shadow-feature-shadow lg:mx-[20px] xl:mx-0'}>
             <SingleFeature icon={SingleFeatureIcon.DeliveryTruck}
                            title={'Free Shipping'}
                            description={'Free shipping on all your order'}/>

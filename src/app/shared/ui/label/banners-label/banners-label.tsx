@@ -9,7 +9,7 @@ export interface IBannersLabelProps {
 const BannersLabel: React.FC<IBannersLabelProps> = ({
                                                         discountSize,
                                                     }) => {
-    const labelTextClass = 'text-body-xl leading-body font-semibold text-white px-3 py-1 ';
+    const labelTextClass: string = 'text-body-xl leading-body font-semibold text-white px-3 py-1 ';
     return (
         <Label color={LabelColor.ORANGE}>
             <div className={labelTextClass}>

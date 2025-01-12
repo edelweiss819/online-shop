@@ -4,12 +4,12 @@ import {LOCATION_ADDRESS} from '@/app/constants';
 import ChevronDown from '@/app/assets/chevron-down/chevron-down';
 
 const HeaderTopMenu: React.FC = ({}) => {
-    const dropDownItemsStyle = 'flex flex-row gap-[6px] items-center justify-center cursor-pointer text-gray-6 text-body-tiny font-normal leading-130';
+    const dropDownItemsStyle: string = 'flex flex-row gap-[6px] items-center justify-center cursor-pointer text-gray-6 text-body-tiny font-normal leading-130';
 
     //TODO Вынести дрподаун шеврон в отдельный компонент
     return (
-        <div className="w-full border borde-gray-1 ">
-            <div className={'bg-white flex justify-center'}>
+        <div className="w-full border borde-gray-1">
+            <div className={'bg-white flex justify-center lg:mx-[20px] xl:mx-0 '}>
                 <div className={'flex flex-row justify-between w-full max-w-base-width py-3'}>
                     <div className={'flex flex-row gap-2 items-center'}>
                         <div>

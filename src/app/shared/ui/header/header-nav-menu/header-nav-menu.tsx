@@ -10,7 +10,7 @@ const HeaderNavMenu: React.FC = () => {
 
     return (
         <div className="w-full bg-gray-8 py-4">
-            <div className="flex justify-center">
+            <div className="flex justify-center lg:mx-[20px] xl:mx-0">
                 <div className="flex flex-row max-w-base-width w-full justify-between">
                     <div className={'flex flex-row gap-8'}>
                         {NAVIGATION_ITEMS_LIST.map((item, index) => (

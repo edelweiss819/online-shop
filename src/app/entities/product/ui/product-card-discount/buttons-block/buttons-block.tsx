@@ -19,11 +19,11 @@ const ButtonsBlock: React.FC = () => {
     const handleMouseEnterEye = () => setIsHoverEye(true);
     const handleMouseLeaveEye = () => setIsHoverEye(false);
 
-    const bagButtonStyle = 'cursor-pointer flex flex-grow bg-gray-0.5 rounded-full hover:bg-primary';
+    const bagButtonStyle: string = 'cursor-pointer flex flex-grow bg-gray-0.5 rounded-full hover:bg-primary';
     const bagButtonTextStyle = classnames('text-body-small text-gray-9 font-semibold ', {
         'text-white': isHoverBag,
     });
-    const defaultButtonStyle = 'cursor-pointer flex w-[46px] h-[46px] items-center justify-center rounded-full bg-gray-0.5 hover:bg-primary ';
+    const defaultButtonStyle: string = 'cursor-pointer flex w-[46px] h-[46px] items-center justify-center rounded-full bg-gray-0.5 hover:bg-primary ';
 
 
     return (

@@ -9,7 +9,7 @@ export interface IDiscountLabelProps {
 const DiscountLabel: React.FC<IDiscountLabelProps> = ({
                                                           discountSize
                                                       }) => {
-    const textClass = 'text-body-small font-normal mx-2 my-[3px] text-white leading-body';
+    const textClass: string = 'text-body-small font-normal mx-2 my-[3px] text-white leading-body';
     return (
         <Label color={LabelColor.RED}>
             {discountSize && discountSize > 0 &&

@@ -19,29 +19,31 @@ const MediumBanner_3: React.FC<MediumBanner3Props> = ({
     const imageSrc = `/images/test/banners-backgrounds/medium-banners/medium-banner_${bannerBackground}.png`;
 
     return (
-        <div className={'w-[424px] h-[536px] relative'}>
+        <div className={'w-[424px] h-[536px] relative flex'}>
             <Image src={imageSrc}
                    alt={imageAlt}
                    priority={true}
-                   width={424}
-                   height={536}
-                   className={'rounded-[8px]'}/>
+                   fill
+                   style={{
+                       objectFit: 'cover',
+                       borderRadius: '8px'
+                   }}/>
             <div className="absolute top-[35px] w-full flex flex-col items-center">
                 <div className="text-body-small font-medium leading-[100%] text-white">
                     85% Fat Free
                 </div>
-                <div className="mt-4 text-heading-04 font-semibold leading-heading text-white">
+                <div className="mt-4 text-heading-04 font-semibold leading-heading text-white text-center">
                     Low-Fat Meat
                 </div>
-                <div className="mt-[12.5px] flex flex-row gap-2 justify-center items-center">
-                    <div className={'text-body-large font-normal leading-body text-white'}>
+                <div className="mt-[12.5px] flex flex-row gap-2 justify-center items-center ">
+                    <div className={'text-body-large font-normal leading-body text-white text-center'}>
                         Low-Fat Meat
                     </div>
                     <div className={'text-body-xl font-semibold leading-body text-warning'}>
                         ${price}
                     </div>
                 </div>
-                <div className="mt-[28.5px]">
+                <div className="mt-[37.5px]">
                     <ButtonWithArrow text="Shop Now"
                                      size={ButtonWithArrowSize.M}
                                      fill={ButtonFillStyle.BORDER}/>

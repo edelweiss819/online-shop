@@ -17,17 +17,20 @@ const MediumBanner_2: React.FC<MediumBanner2Props> = ({
     const imageSrc = `/images/test/banners-backgrounds/medium-banners/medium-banner_${bannerBackground}.png`;
 
     return (
-        <div className={'w-[424px] h-[536px] relative'}>
+        <div className={'w-[424px] h-[536px] relative flex'}>
             <Image src={imageSrc}
                    alt={imageAlt}
                    priority={true}
-                   width={424}
-                   height={536}/>
+                   fill
+                   style={{
+                       objectFit: 'cover',
+                       borderRadius: '8px'
+                   }}/>
             <div className="absolute top-[35px] w-full flex flex-col items-center">
                 <div className="text-body-small font-medium leading-[100%] text-gray-9">
                     SUMMER SALE
                 </div>
-                <div className="mt-4 text-heading-04 font-semibold leading-heading text-gray-9">
+                <div className={'mt-4 text-heading-04 font-semibold leading-heading text-gray-9 text-center'}>
                     100% Fresh Fruit
                 </div>
                 <div className="mt-2 flex flex-row gap-3 items-center">
@@ -40,7 +43,7 @@ const MediumBanner_2: React.FC<MediumBanner2Props> = ({
                         </div>
                     </div>
                 </div>
-                <div className="mt-6">
+                <div className={'mt-[33px]'}>
                     <ButtonWithArrow text="Shop Now"
                                      size={ButtonWithArrowSize.M}
                                      fill={ButtonFillStyle.BORDER}/>

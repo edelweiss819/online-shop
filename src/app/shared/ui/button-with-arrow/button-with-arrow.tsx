@@ -23,7 +23,7 @@ const ButtonWithArrow: React.FC<ButtonWithArrowProps> = ({
                                                          }) => {
     const [isHoverButton, setIsHoverButton] = useState<boolean>(false);
 
-    const commonButtonClass = 'rounded-[43px] inline-flex items-center justify-center cursor-pointer border-2';
+    const commonButtonClass: string = 'rounded-[43px] inline-flex items-center justify-center cursor-pointer border-2';
     const buttonFillClass = classnames({
                                            'bg-primary border-primary hover:bg-hard-primary hover:border-hard-primary transition-colors duration-150 ease-in-out': fill === ButtonFillStyle.FILL,
                                            'bg-white border-white hover:bg-white hover:border-hard-primary transition-colors duration-150 ease-in-out': fill === ButtonFillStyle.BORDER,
@@ -36,7 +36,7 @@ const ButtonWithArrow: React.FC<ButtonWithArrowProps> = ({
                                            'h-[51px]': size === ButtonWithArrowSize.L,
                                        });
     const buttonClass = classnames(commonButtonClass, buttonSizeClass, buttonFillClass);
-    const textCommonClass = 'font-semibold leading-heading';
+    const textCommonClass: string = 'font-semibold leading-heading';
     const textColorClass = classnames({
                                           'text-white': fill === ButtonFillStyle.FILL,
                                           'text-primary': fill === ButtonFillStyle.BORDER && !isHoverButton,
@@ -50,7 +50,7 @@ const ButtonWithArrow: React.FC<ButtonWithArrowProps> = ({
         'text-body-medium py-4': size === ButtonWithArrowSize.L,
     }, textColorClass);
 
-    const blockCommonClass = 'inline-flex items-center justify-center gap-3';
+    const blockCommonClass: string = 'inline-flex items-center justify-center gap-3';
     const blockClass = classnames(blockCommonClass, {
         'px-6': size === ButtonWithArrowSize.S,
         'px-8 ': size === ButtonWithArrowSize.M,

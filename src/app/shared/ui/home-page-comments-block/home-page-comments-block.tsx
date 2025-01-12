@@ -1,6 +1,6 @@
 'use client';
 
-import React, {useState, useRef, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import CommentCard_1 from '@/app/entities/user-comment/ui/comment-card_1';
 import HomePageBlock from '@/app/shared/ui/home-page-block/home-page-block';
 import {UserComment} from '@/app/entities/user-comment/model/user-comment';
@@ -8,52 +8,74 @@ import NavArrows from '@/app/shared/ui/nav/nav-arrows/nav-arrows';
 
 export type HomePageCommentsBlockProps = {
     comments: UserComment[];
+    commentsPerPage: number;
 };
 
-const HomePageCommentsBlock: React.FC<HomePageCommentsBlockProps> = ({comments}) => {
-    const commentsPerPage = 3;
-    const [currentIndex, setCurrentIndex] = useState<number>(0);
-    const sliderRef = useRef<HTMLDivElement | null>(null);
-    const [containerWidth, setContainerWidth] = useState<number>(0);
+const HomePageCommentsBlock: React.FC<HomePageCommentsBlockProps> = ({
+                                                                         comments,
+                                                                         commentsPerPage
+                                                                     }) => {
+
+    const [iterationCount, setIterationCount] = useState<number>(1);
+    const [startIndex, setStartIndex] = useState<number>(0);
+    const [endIndex, setEndIndex] = useState<number>(commentsPerPage);
+    const totalIterations = Math.ceil(comments.length / commentsPerPage);
+    const initialVisibleCommentArray = comments.slice(startIndex, endIndex);
+    const [visibleCommentsArray, setVisibleCommentsArray] = useState<UserComment[]>(initialVisibleCommentArray);
+    const [isVisible, setIsVisible] = useState(true);
 
     useEffect(() => {
-        if (sliderRef.current) {
-            setContainerWidth(sliderRef.current.offsetWidth);
-        }
-    }, [comments.length]);
+        const visibleComments = comments.slice(startIndex, endIndex);
+        setVisibleCommentsArray(visibleComments);
+    }, [
+                  startIndex,
+                  endIndex,
+                  comments
+              ]);
 
     const handleLeftArrowClick = () => {
-        if (currentIndex > 0) {
-            setCurrentIndex(currentIndex - commentsPerPage);
+        if (iterationCount > 1) {
+            setIsVisible(false);
+            setTimeout(() => {
+                setIterationCount(prevIteration => prevIteration - 1);
+                setStartIndex(prevState => prevState - commentsPerPage);
+                setEndIndex(prevState => prevState - commentsPerPage);
+                setIsVisible(true);
+            }, 300);
         }
     };
 
     const handleRightArrowClick = () => {
-        if (currentIndex + commentsPerPage < comments.length) {
-            setCurrentIndex(currentIndex + commentsPerPage);
+        if (iterationCount < totalIterations) {
+            setIsVisible(false);
+            setTimeout(() => {
+                setIterationCount(prevIteration => prevIteration + 1);
+                setStartIndex(prevState => prevState + commentsPerPage);
+                setEndIndex(prevState => prevState + commentsPerPage);
+                setIsVisible(true);
+            }, 300);
         }
     };
 
-    const sliderWidth = (comments.length / commentsPerPage) * 100
-    const sliderShift = (currentIndex / comments.length) * containerWidth;
+    const maxCommentWidthCalc = 100 / commentsPerPage;
+
     return (
         <HomePageBlock
             title={'Client Testimonials'}
             navElement={<NavArrows leftArrowClick={handleLeftArrowClick}
                                    rightArrowClick={handleRightArrowClick}/>}
         >
-            <div className="relative overflow-hidden">
+            <div className="overflow-hidden relative">
                 <div
-                    ref={sliderRef}
-                    className="flex flex-row gap-6 transition-transform duration-700 ease-in-out"
-                    style={{
-                        transform: `translateX(-${sliderShift}px)`,
-                        width: `${sliderWidth}%`,
-                    }}
+                    className={`flex flex-row gap-4 lg:mx-[20px] xl:mx-0 transition-opacity duration-300 ease-in-out ${isVisible ? 'opacity-100' : 'opacity-0'}`}
                 >
-                    {comments.map((comment) => (
-                        <CommentCard_1 userComment={comment}
-                                       key={comment.id}/>
+                    {visibleCommentsArray.map((comment, id) => (
+                        <div
+                            style={{maxWidth: `${maxCommentWidthCalc}%`}}
+                            key={id}
+                        >
+                            <CommentCard_1 userComment={comment}/>
+                        </div>
                     ))}
                 </div>
             </div>

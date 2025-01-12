@@ -41,14 +41,14 @@ const ProductCardMini: React.FC<IProductCardMini> = ({product}) => {
 
     const blockClass =
         'h-[116px] w-[424px] bg-white flex grow-0 shrink-1 rounded-[6px] border border-gray-1 hover:border-hard-primary hover:shadow-card-standard transition-shadow duration-150 ease-in-out';
-    const leftSubBlock = 'm-[5px] w-[102px] h-[102px]';
+    const leftSubBlock: string = 'm-[5px] w-[102px] h-[102px]';
 
     const productNameClass = classnames(
         'text-body-small font-normal cursor-pointer leading-body text-color-gray-7',
         {'text-hard-primary': isHoverCard}
     );
 
-    const rightSubBlock = 'p-6 flex flex-col';
+    const rightSubBlock: string = 'p-6 flex flex-col';
 
     return (
         <div

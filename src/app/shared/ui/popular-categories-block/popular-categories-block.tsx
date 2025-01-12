@@ -18,7 +18,7 @@ const PopularCategoriesBlock: React.FC<PopularCategoriesBlockProps> = ({
     return (
         <div style={{marginTop: `${mt}px`}}>
             <HomePageBlock title="Popular categories">
-                <div className="grid grid-cols-6 gap-6">
+                <div className="grid grid-cols-6 gap-6 lg:mx-[20px] xl:mx-0">
                     {categories.map((category, index) => (
                         <ProductCategoryCard key={index}
                                              category={category}/>

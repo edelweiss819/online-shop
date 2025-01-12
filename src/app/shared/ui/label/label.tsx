@@ -12,7 +12,7 @@ const Label: React.FC<ILabelProps> = ({
                                           children,
                                       }) => {
 
-    const commonBlockClass = 'flex rounded-[4px] ';
+    const commonBlockClass: string = 'flex rounded-[4px] ';
 
     const blockClass = classnames(commonBlockClass, {
         'bg-danger border-danger': color === LabelColor.RED,

@@ -1,7 +1,7 @@
 import React from 'react';
 import AddToWishlistBigIcon
     from '@/app/assets/icons/add-to-wishlist-big-icon/add-to-wishlist-big-icon';
-import Divider from '@/app/assets/divider/divider';
+import Divider from '@/app/assets/dividers/divider';
 import IconWithBadge from '@/app/shared/ui/icon-with-badge/icon-with-badge';
 
 const HeaderShoppingCartBlock: React.FC = () => {

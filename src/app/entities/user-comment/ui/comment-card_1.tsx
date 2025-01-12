@@ -8,16 +8,20 @@ export type CommentCard_1Props = {
     userComment: UserComment;
 }
 
-const CommentCard_1: React.FC<CommentCard_1Props> = ({userComment}) => {
+const CommentCard_1: React.FC<CommentCard_1Props> = ({
+                                                         userComment,
+
+                                                     }) => {
 
     const fullUserName = userComment.author.name + ' ' + userComment.author.surname;
     const userNameFirstLetter = userComment.author.name[0].toUpperCase();
 
     return (
-        <div className={'bg-white h-[254px] w-[424px] rounded-lg p-6'}>
+        <div className={'bg-white h-[254px] rounded-lg p-6 flex flex-shrink-1 flex-grow-0 '}
+        >
             <div>
                 <CommentQuotes/>
-                <div className={'pt-4 text-body-small font-normal leading-body'}>{userComment.content}</div>
+                <div className={'pt-4 lg: text-body-tiny xl:text-body-small font-normal leading-body'}>{userComment.content}</div>
                 <div className={'pt-4 flex flex-row justify-between'}>
                     <div className={'flex flex-row gap-3'}>
                         <div className={'w-[56px] h-[56px] rounded-full overflow-hidden'}>

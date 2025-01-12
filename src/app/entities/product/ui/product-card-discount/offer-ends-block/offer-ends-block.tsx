@@ -7,10 +7,10 @@ export interface IOfferEndsBlockProps {
 }
 
 const OfferEndsBlock: React.FC<IOfferEndsBlockProps> = ({endTime}) => {
-    const remainingTimeCellStyle = 'w-[60px] flex flex-col items-center justify-center';
-    const dateTextStyle = 'text-[10px] text-gray-4 leading-[100%] font-medium';
-    const timerTextStyle = 'text-body-large text-gray-9 leading-body font-medium';
-    const timerColonStyle = 'pt-1 font-semibold';
+    const remainingTimeCellStyle: string = 'w-[60px] flex flex-col items-center justify-center';
+    const dateTextStyle: string = 'text-[10px] text-gray-4 leading-[100%] font-medium';
+    const timerTextStyle: string = 'text-body-large text-gray-9 leading-body font-medium';
+    const timerColonStyle: string = 'pt-1 font-semibold';
 
     return (
         <>

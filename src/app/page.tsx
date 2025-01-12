@@ -17,6 +17,8 @@ import {User, UserRole} from '@/app/entities/user/model/user';
 import HomePageCommentsBlock
     from '@/app/shared/ui/home-page-comments-block/home-page-comments-block';
 import {UserComment} from '@/app/entities/user-comment/model/user-comment';
+import CompaniesLogoBlock from '@/app/shared/ui/companies-logo-block/companies-logo-block';
+import NewsletterPopup from '@/app/shared/ui/popups/newssletter-popup/newsletter-popup';
 
 const testProduct1 = {
     id: '456',
@@ -45,6 +47,7 @@ const testProduct1 = {
     },
 };
 
+
 const TestUser: User = {
     id: '1',
     name: 'John',
@@ -69,7 +72,7 @@ const TestComment: UserComment = {
 
 }
 
-const TestCommentArray = Array(49).fill(null).map((_, index) => ({
+const TestCommentArray = Array(16).fill(null).map((_, index) => ({
     ...TestComment,
     id: index + 1
 }));
@@ -94,7 +97,7 @@ const Home: React.FC = async () => {
 
 
     return (
-        <div>
+        <main>
             <CentredHomePageBlock color={'white'}>
                 <div className={'mt-6'}>
                     <TopBannersBlock/>
@@ -124,16 +127,24 @@ const Home: React.FC = async () => {
                                            bannerBackground={1}
                                            discountSize={37}/>
                 </div>
-                <div className={'mt-[60px]'}>
+                <div className={'my-[60px]'}>
                     <FeaturedProductsBlock products={FeaturedProductArray}/>
                 </div>
             </CentredHomePageBlock>
             <CentredHomePageBlock color={'gray-secondary'}>
                 <div className={'py-[60px]'}>
-                    <HomePageCommentsBlock comments={TestCommentArray}/>
+                    <HomePageCommentsBlock comments={TestCommentArray}
+                                           commentsPerPage={3}/>
                 </div>
             </CentredHomePageBlock>
-        </div>
+            <CentredHomePageBlock color={'white'}>
+                <div className={'py-[60px] ]'}>
+                    <CompaniesLogoBlock/>
+                </div>
+            </CentredHomePageBlock>
+            <NewsletterPopup image={1}
+                             discountSize={20}/>
+        </main>
     );
 }
 

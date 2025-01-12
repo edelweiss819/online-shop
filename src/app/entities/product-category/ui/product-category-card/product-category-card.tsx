@@ -25,11 +25,11 @@ const ProductCategoryCard: React.FC<ProductCategoryCardProps> = ({
     })
 
     return (
-        <Link className={'max-w-[200px] w-full min-h-[213px] bg-white border border-gray-1 hover:border-primary hover:shadow-card-standard transition-shadow duration-150 ease-in-out '}
+        <Link className={'max-w-[200px] w-full min-h-[213px] flex flex-col bg-white border border-gray-1 hover:border-primary hover:shadow-card-standard transition-shadow duration-150 ease-in-out '}
               href={category.href}
               onMouseEnter={handleEnterCard}
               onMouseLeave={handleLeaveCard}>
-            <div className={'w-[190px] h-[130px] mt-4 mx-[5px]'}>
+            <div className={'flex-1 mt-4 mx-[5px]'}>
                 <Image
                     className={'w-full h-full'}
                     width={190}

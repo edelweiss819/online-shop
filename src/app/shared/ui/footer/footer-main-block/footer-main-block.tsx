@@ -14,10 +14,10 @@ import FooterNavListBlock
     from '@/app/shared/ui/nav/footer-nav/footer-nav-list-block/footer-nav-list-block';
 
 const FooterMainBlock: React.FC = () => {
-    const contactsTextStyle = 'contacts-text-style text-body-small leading-body font-medium text-white';
+    const contactsTextStyle: string = 'contacts-text-style text-body-small leading-body font-medium text-white';
     return (
         <div className={'w-full bg-gray-9 h-[372px]'}>
-            <div className={'flex justify-center my-20'}>
+            <div className={'flex justify-center my-20 lg:mx-[20px] xl:mx-0'}>
                 <div className={'flex flex-row w-full max-w-base-width gap-[78px]'}>
                     <div>
                         <FooterInfoBlock blockTitle={'About Shopery'}

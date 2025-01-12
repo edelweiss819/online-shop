@@ -12,7 +12,7 @@ const LinkWithArrow: React.FC<ILinkWithArrowProps> = ({
                                                           text
                                                       }) => {
 
-    const arrowColorClass = 'text-primary';
+    const arrowColorClass: string = 'text-primary';
 
     return (
         <Link href={href}>

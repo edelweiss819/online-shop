@@ -6,7 +6,7 @@ const FooterLowerBlock: React.FC = () => {
     return (
         <div>
             <div className={'w-full bg-gray-9 h-[88px]'}>
-                <div className={'flex justify-center h-full'}>
+                <div className={'flex justify-center h-full lg:mx-[20px] xl:mx-0'}>
                     <div className={'grid grid-cols-3 items-center w-full max-w-base-width border-t border-gray-5'}>
                         <div className={'flex justify-start'}>
                             <SocialNetworkButton socialNetworkName={SocialNetworkName.Facebook}/>

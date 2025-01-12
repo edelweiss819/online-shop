@@ -7,6 +7,8 @@ import {
     ButtonSpecialModifier
 } from '@/app/shared/ui/button/button.enums';
 
+
+//TODO удалить  после того как сделаю форму
 const HeaderSearchPanel: React.FC = () => {
     return (
         <div className="flex flex-row items-center justify-center ">
@@ -22,7 +24,7 @@ const HeaderSearchPanel: React.FC = () => {
                 </div>
             </div>
             <Button text={'Search'}
-                    size={ButtonSize.M}
+                    size={ButtonSize.SEARCH}
                     fill={ButtonFillStyle.FILL}
                     specialModifier={ButtonSpecialModifier.SEARCH}/>
         </div>

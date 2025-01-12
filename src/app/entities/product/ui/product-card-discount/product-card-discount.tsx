@@ -26,7 +26,7 @@ const ProductCardDiscount: React.FC<IProductCardDiscount> = ({
     const [isHoverCard, setIsHoverCard] = useState<boolean>(false);
     const handleMouseEnterCard = () => setIsHoverCard(true);
     const handleMouseLeaveCard = () => setIsHoverCard(false);
-    const blockStyle = classnames('relative w-[528px] h-[654px] bg-white', {
+    const blockStyle = classnames('relative flex-1 h-[654px] bg-white', {
         'border border-hard-primary shadow-card-standard transition-shadow duration-150 ease-in-out z-10': isHoverCard,
         'border border-gray-1 z-0': !isHoverCard,
     })
@@ -68,7 +68,7 @@ const ProductCardDiscount: React.FC<IProductCardDiscount> = ({
 
     return (
         <div
-            className={'w-[528px]'}
+            className={'lg:w-full xl:w-[528px] flex'}
             onMouseEnter={handleMouseEnterCard}
             onMouseLeave={handleMouseLeaveCard}>
             <div className={blockStyle}>
@@ -76,11 +76,10 @@ const ProductCardDiscount: React.FC<IProductCardDiscount> = ({
                             isNew={product.isNew}
                             quantity={product.quantity}/>
                 <div className={'absolute top-0 right-0 left-0'}>
-                    <div className={'w-[526px] h-[446px]'}>
+                    <div className={'lg:w-full xl:w-[446px] h-[450px] relative flex min-w-full'}>
                         <Image
-                            className={'h-full w-full'}
-                            width={526}
-                            height={446}
+                            className={'w-full h-full -z-10 flex-1'}
+                            fill
                             priority={true}
                             src={product.images.large || PRODUCT_FALLBACK_IMAGE}
                             alt={product.name}

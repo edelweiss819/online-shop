@@ -49,25 +49,28 @@ const MediumBanner_1: React.FC<MediumBanner1Props> = ({
 
     const formattedRemaining = formatDateWithLeadingZero(remainingTime);
 
-    const remainingTimeCellStyle = 'w-[56px] px-1 flex flex-col items-center justify-center';
-    const dateTextStyle = 'text-body-tiny text-gray-2 leading-[100%] font-normal';
-    const timerTextStyle = 'text-body-xxl text-white leading-body font-normal';
-    const timerColonStyle = 'pt-[6px] font-semibold text-gray-2';
+    const remainingTimeCellStyle: string = 'w-[56px] px-1 flex flex-col items-center justify-center';
+    const dateTextStyle: string = 'text-body-tiny text-gray-2 leading-[100%] font-normal';
+    const timerTextStyle: string = 'text-body-xxl text-white leading-body font-normal';
+    const timerColonStyle: string = 'pt-[6px] font-semibold text-gray-2';
 
     const imageSrc = `/images/test/banners-backgrounds/medium-banners/medium-banner_${bannerBackground}.png`;
 
 
     return (
-        <div className="w-[424px] h-[536px] relative">
+        <div className="w-[424px] h-[536px] relative flex">
             <Image src={imageSrc}
                    alt={imageAlt}
                    priority
-                   width={424}
-                   height={536}/>
+                   fill
+                   style={{
+                       objectFit: 'cover',
+                       borderRadius: '8px'
+                   }}/>
             <div className="absolute top-[35px] w-full flex flex-col items-center">
                 <div className="text-body-small font-medium leading-[100%] text-white">BEST DEALS
                 </div>
-                <div className="mt-4 text-heading-04 font-semibold leading-heading text-white">
+                <div className="mt-4 text-heading-04 font-semibold leading-heading text-white text-center">
                     Sale of Month
                 </div>
                 <div className="flex flex-row mt-2">

@@ -5,11 +5,11 @@ import BigBanner_1 from '@/app/shared/ui/banners/big-banners/big-banner_1';
 
 const TopBannersBlock: React.FC = () => {
     return (
-        <div className={'grid grid-cols-[minmax(470px,872px),minmax(423px,423px)] gap-6'}>
+        <div className={'grid grid-cols-[minmax(470px,872px),minmax(423px,423px)] gap-6 lg:mx-[20px] xl:mx-0 '}>
             <div className="col-span-1 row-span-2">
                 <BigBanner_1
                     bannerBackground={1}
-                    imageAlt={'Fresh & Healthy Organic Food'}
+                    imageAlt={'Fresh & Healthy Organic FoodNetwork'}
                     discountSize={30}
                 />
             </div>
